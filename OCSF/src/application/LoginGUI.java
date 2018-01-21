@@ -8,19 +8,24 @@ import javax.swing.JOptionPane;
 import javax.swing.event.AncestorEvent;
 
 import clinetcontrollers.LoginController;
+import common.Constants.MyConstants;
+
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import myClient.MyClient;
 
 public class LoginGUI implements Initializable {
+public static ClientUI clientUI;
 	public static MyClient clinet;
 	
 	@FXML
@@ -31,20 +36,29 @@ public class LoginGUI implements Initializable {
 
 	@FXML
 	private Button loginButton;
+	private static LoginGUI myInstance = null;
+     private Stage stage;
+
+	public Stage getStage() {
+		return stage;
+	}
+    
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
 
 	LoginController loginController = new LoginController();
 
-	public void start(Stage primaryStage) throws Exception {
+	public void start() throws Exception {
 		URL url = getClass().getResource("Login.fxml");
 		AnchorPane pane = FXMLLoader.load(url);
-		Scene scene = new Scene(pane);
-		primaryStage.setScene(scene);
-		primaryStage.setTitle("Login");
-		primaryStage.show();
-	clinet = new MyClient("localhost", 5555);
+		Scene scene = new Scene(pane,600,600);
+		stage.setScene(scene);
+		stage.setTitle("Login");
+		stage.show();
 	}
 
-	private void handleButtonAction(ActionEvent event) throws IOException {
+	private void handleButtonAction(ActionEvent event) throws Exception {
 		// Button was clicked, do something...
 		String requestedID = username.getText();
 		String requestedPass = password.getText();
@@ -54,9 +68,10 @@ public class LoginGUI implements Initializable {
 			 	JOptionPane.showMessageDialog(null,"Invalid Input");
 			}
 			else
-			{
+			{   clinet = ClientUI.getMyInstance().getMyClient();
 				clinet.openConnection();
 				loginController.handleUserRequestToLogin(requestedID, requestedPass);
+				
 			
 			}
 		
@@ -71,7 +86,24 @@ public class LoginGUI implements Initializable {
 				handleButtonAction(event);
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		});
 	}
+	
+	public static LoginGUI getInstance()
+	{
+		if(myInstance == null)
+			myInstance = new LoginGUI();
+		return myInstance;
+	}
+
+	public Button getBtn() {
+	loginButton = new Button("Login");
+		return loginButton;
+	}
+
+
 }

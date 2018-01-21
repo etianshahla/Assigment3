@@ -2,6 +2,7 @@ package clinetcontrollers;
 
 import java.io.IOException;
 
+import application.ClientUI;
 import application.LoginGUI;
 import common.Constants.MyConstants;
 import common.Entities.User;
@@ -37,7 +38,7 @@ public class LoginController {
 			////// send the user to server in order to check if exists ////////////////////////////// 
 		try
 		{
-			LoginGUI.clinet.handleMessageFromClientUI(messageToServer);
+			ClientUI.getMyInstance().getMyClient().handleMessageFromClientUI(messageToServer);
 		}
 		catch(IOException e)
 		{	

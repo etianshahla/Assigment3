@@ -46,11 +46,12 @@ package server.controllers;
 				{   
 					  userInDB.setUsername(rs.getString(2));
 						userInDB.setPassword(rs.getString(3));
-						
+						userInDB.setUserType(rs.getString(4));
 						if (userInDB.getUsername().equals(user.getUsername())  && userInDB.getPassword().equals(user.getPassword())) {
 							messageToClient.setWhatToDo(MyConstants.LOGIN_SUCCESS);
 							System.out.println("logged in");
 							messageToClient.setData(userInDB);
+							break;
 						}
 				}
 				

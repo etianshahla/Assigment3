@@ -12,6 +12,7 @@ import common.OurMessage.Message;
 import ocsf.server.AbstractServer;
 import ocsf.server.ConnectionToClient;
 import server.controllers.ServerLoginController;
+import server.controllers.ServerOrderController;
 
 
 
@@ -56,7 +57,7 @@ public class Server extends AbstractServer
 
 			  switch(message.getWhatToDo())
 			  {
-			  		case(MyConstants.CHECK_USER_EXIST):
+			  		case(MyConstants.CHECK_USER_EXIST):{
 			  			User user = new User();
 			  			for(int i=0 ; i<array.size();i++)
 			  			{
@@ -68,8 +69,13 @@ public class Server extends AbstractServer
 			  			}
 			  			ServerLoginController.checkIfUserExist(connDB, client, user);
 			  			break;
+			  }
 			  			
-			  		
+			  		case(MyConstants.GET_PRODUCTS) :
+			  		{   System.out.println(message.getWhatToDo());
+			  			ServerOrderController.getAllProducts(connDB,client);
+			  			break;
+			  		}
 			  }
 		  }
 		  catch(Exception e)

@@ -105,7 +105,7 @@ public class ServerUI extends JFrame
 		textFieldDBName.setBounds(171, 34, 186, 20);
 		contentPane.add(textFieldDBName);
 		textFieldDBName.setColumns(10);
-		textFieldDBName.setText("myfuel");
+		textFieldDBName.setText("DBFinal");
 		
 		lblPort = new JLabel("Port:");
 		lblPort.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -181,7 +181,7 @@ public class ServerUI extends JFrame
 		textFieldPass.setBounds(171, 133, 186, 20);
 		contentPane.add(textFieldPass);
 		textFieldPass.setColumns(10);
-		textFieldPass.setText("Braude");
+		textFieldPass.setText("");
 		
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 11));
