@@ -105,8 +105,7 @@ public class ServerUI extends JFrame
 		textFieldDBName.setBounds(171, 34, 186, 20);
 		contentPane.add(textFieldDBName);
 		textFieldDBName.setColumns(10);
-		textFieldDBName.setText("DBFinal");
-		
+		textFieldDBName.setText("flowersProject");
 		lblPort = new JLabel("Port:");
 		lblPort.setFont(new Font("Arial", Font.PLAIN, 16));
 		lblPort.setBounds(60, 67, 64, 14);

@@ -9,10 +9,13 @@ public class Item implements Serializable {
     private String name;
     private int id_number_inCatlog;
     private float price;
-	
+    private String type;	
     
     
-    public Item() {
+   
+
+
+	public Item() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -80,6 +83,15 @@ public class Item implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+
+
+	public void setType(String type) {
+	   this.type = 	type;
+	}
+	 public String getType() {
+			return type;
+		}
     
     
     

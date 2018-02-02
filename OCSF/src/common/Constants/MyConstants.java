@@ -100,4 +100,6 @@ public class MyConstants
 			"More Details: The Cost="+"\n"+"Amount of Liters x Liter`s Price"+"\n"+"+ Discount of 3% Of Total Cost.";
 	public static final String SPECIAL_ORDER ="Wanted Fuel Amount: Over 800 Liters. "+"\n"+
 			"More Details: The Cost="+"\n"+"Amount of Liters x Liter`s Price"+"\n"+"+ Discount of 4% Of Total Cost.";
+	public static final String GET_PRODUCTS_IN_CATLOG = "get product in catlog";
+	public static final String ADD_ITEM_TO_ORDER_FROM_CATLOG = "Add order from catlog";
 }

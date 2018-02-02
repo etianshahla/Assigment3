@@ -21,10 +21,14 @@ import javafx.stage.Stage;
 
 import common.*;
 import common.Constants.MyConstants;
+import common.Entities.Item;
+import common.Entities.OrdersView;
 import common.Entities.User;
 import ocsf.client.AbstractClient;
 
 public class MyClient extends AbstractClient {
+	public List<OrdersView> orders;
+	public List<Item> items;
 	Message message = new Message();
 	/**
 	 * clientUI - parameter of the client GUI.
@@ -61,7 +65,6 @@ public class MyClient extends AbstractClient {
 	public void handleMessageFromServer(Object msg) {
 
 		message = (Message) msg;
-		System.err.println(msg.toString());
 		ArrayList<Object> array = new ArrayList<>();
 		String role = null;
 
@@ -84,11 +87,10 @@ public class MyClient extends AbstractClient {
 					@Override
 					public void run() {
 						try {
-							System.out.println(user.getUserType());
 							if (user.getUserType().equals("client")) {
 
 								ClientUI.getMyInstance().getLoginGUI().getStage().hide();
-								OrderController.getProductsFromServer();
+								OrderController.getProductsFromServer(user);
 							}
 						} catch (Exception e) {
 							// TODO Auto-generated catch block
@@ -96,27 +98,77 @@ public class MyClient extends AbstractClient {
 						}
 					}
 				});
-				// ClientUI.getMyInstance().getCatlogGUI().start();
-				System.out.println("start catlog");
 
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
 		case MyConstants.GET_PRODUCTS: {
 			Platform.runLater(new Runnable() {
+
 				@Override
 				public void run() {
 					try {
-						ClientUI.getCatlogGUI().start(message.getData());
+						System.out.println(message.getData().size());
+						for (int i = 0; i < message.getData().size(); i++) {
+
+							if (message.getData().get(i) instanceof List<?>) {
+								orders = (List<OrdersView>) message.getData().get(i);
+								break;
+							}
+						}
+
+						ClientUI.getOrderGUI().start();
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
 			});
+
+			break;
 		}
+		case MyConstants.GET_PRODUCTS_IN_CATLOG: {
+			Platform.runLater(new Runnable() {
+
+				@Override
+				public void run() {
+					try {
+						System.out.println(message.getData().size());
+						for (int i = 0; i < message.getData().size(); i++) {
+
+							if (message.getData().get(i) instanceof List<?>) {
+								items = (List<Item>) message.getData().get(i);
+								break;
+							}
+						}
+
+						ClientUI.getCatlogGUI().start();
+					
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+break;
+		}
+		case MyConstants.ADD_ITEM_TO_ORDER_FROM_CATLOG: {
+			Platform.runLater(new Runnable() {
+
+				@Override
+				public void run() {
+					try {
+						OrderController.getProductsFromServer(user);
+					ClientUI.getOrderGUI().start();
+					
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+break;
+		}
+
 		}
 
 	}
@@ -150,5 +202,9 @@ public class MyClient extends AbstractClient {
 			throw e;
 			// quit();
 		}
+	}
+
+	public User getUser() {
+		return user;
 	}
 }

@@ -10,27 +10,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import common.Constants.MyConstants;
+import common.Entities.OrdersView;
 import common.Entities.User;
 import common.OurMessage.Message;
 import ocsf.server.ConnectionToClient;
 
 public class ServerOrderController {
 
-	public static void getAllProducts(Connection connDB, ConnectionToClient client) {
+	public static void getAllProducts(Connection connDB, ConnectionToClient client,User user) {
 		Message messageToClient = new Message();
-		List<String> data = new ArrayList<>();
+		List<OrdersView> data = new ArrayList<>();
 		ResultSet rs = null;
-
 		try {
-
-			PreparedStatement pst = connDB.prepareStatement("SELECT * FROM Items");
+             System.out.println(user.getId());
+			PreparedStatement pst = connDB.prepareStatement("SELECT Orders.id,items.price from Orders,items,users WHERE items.id = Orders.item_id AND users.id = "+user.getId()+ "");
 	
 			rs = pst.executeQuery();
 			while (rs.next()) {
-				data.add(rs.getString(2));
-				data.add(rs.getString(3));
-				System.out.println(data.size());
-
+		System.out.println(rs.getString(1));
+		System.out.println(rs.getString(2));
+		OrdersView ordersView = new OrdersView();		
+		ordersView.setId(rs.getInt(1));
+		ordersView.setPrice(rs.getFloat(2));
+          data.add(ordersView);
 			}
 			messageToClient.setWhatToDo(MyConstants.GET_PRODUCTS);
 			messageToClient.setData(data);

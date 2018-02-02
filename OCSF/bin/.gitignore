@@ -1,11 +1,5 @@
 /server/
-/common/
-/Constants/
-/Entities/
-/OurMessage/
-/ocsf/
-/controllers/
 /application/
-/MyClient/
-/myClient/
 /clinetcontrollers/
+/myClient/
+/common/

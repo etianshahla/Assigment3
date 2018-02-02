@@ -1,7 +1,13 @@
 package common.Entities;
 
-public class Order {
+import java.io.Serializable;
 
+public class Order implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String clientName;
 	private int clientId;
@@ -12,6 +18,9 @@ public class Order {
 		this.clientName = clientName;
 		this.clientId = clientId;
 		this.itemId = itemId;
+	}
+	public Order() {
+		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;

@@ -24,8 +24,8 @@ public class ClientUI {
 	public static LoginGUI getLoginGUI() {
 		return LoginGUI.getInstance();
 	}
-
-	public static OrderGUI getCatlogGUI() {
+ 
+	public static OrderGUI getOrderGUI() {
 		return OrderGUI.getInstance();
 	}
 
@@ -49,10 +49,14 @@ public class ClientUI {
 	}
 	public ActionEvent getEvent() {
 		return event;
+		
 	}
 
 	public void setEvent(ActionEvent event) {
 		this.event = event;
 	}
-
+public static CatlogGUI getCatlogGUI()
+{
+	return new CatlogGUI();
+}
 }

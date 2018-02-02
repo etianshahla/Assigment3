@@ -43,7 +43,7 @@ package server.controllers;
 			  rs = pst.executeQuery();
 				
 				while(rs.next())
-				{   
+				{     userInDB.setId(rs.getInt(1));
 					  userInDB.setUsername(rs.getString(2));
 						userInDB.setPassword(rs.getString(3));
 						userInDB.setUserType(rs.getString(4));
