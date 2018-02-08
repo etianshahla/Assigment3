@@ -1,6 +1,8 @@
 package common.Entities;
 
-public class SurveyResults {
+import java.io.Serializable;
+
+public class SurveyResults implements Serializable{
 
 	private int id;
 	private String conclusions;
@@ -21,6 +23,9 @@ public class SurveyResults {
 		this.avg_Q4 = avg_Q4;
 		this.avg_Q5 = avg_Q5;
 		this.avg_Q6 = avg_Q6;
+	}
+	public SurveyResults() {
+		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;

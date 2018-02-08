@@ -14,6 +14,11 @@ public class Client implements Serializable {
 	private String type;
 	private String cridetCard;
 	private String promotional;
+
+	private String cvv;
+	public String getCvv() {
+		return cvv;
+	}
 	public Client(int id, String name, String type, String cridetCard, String promotional) {
 		super();
 		this.id = id;
@@ -56,5 +61,10 @@ public class Client implements Serializable {
 		return serialVersionUID;
 	}
 	
-	
+	public Client() {
+		
+	}
+	public void setCvv(String text) {
+		this.cvv=text;		
+	}
 }

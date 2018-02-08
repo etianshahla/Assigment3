@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SystemAdministratorGUI">
+   <children>
+      <Label layoutX="145.0" layoutY="62.0" />
+      <Label layoutX="158.0" layoutY="15.0" text="system administrator" />
+      <Box layoutX="154.0" layoutY="303.0" />
+      <Button onAction="#openBooking" layoutX="186.0" layoutY="200.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="229.0" text="Booking" />
+      <Label layoutX="27.0" layoutY="15.0" text="account type:" />
+      <Label layoutX="41.0" layoutY="49.0" text="name:" />
+      <Label fx:id="name" layoutX="158.0" layoutY="62.0" text="Label" />
+      <Label layoutX="47.0" layoutY="90.0" text="id:" />
+      <Label fx:id="id" layoutX="153.0" layoutY="90.0" text="Label" />
+      <Label layoutX="174.0" layoutY="144.0" text="choice and select:" />
+      <Button onAction="#openUpdateClient" layoutX="186.0" layoutY="256.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="229.0" text="update client data" />
+      <Button onAction="#openUpdatePermisssions" layoutX="180.0" layoutY="310.0" mnemonicParsing="false" text="Cancel\Update permissions" />
+   </children>
+</AnchorPane>

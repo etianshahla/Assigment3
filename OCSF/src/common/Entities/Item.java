@@ -10,9 +10,21 @@ public class Item implements Serializable {
     private int id_number_inCatlog;
     private float price;
     private String type;	
-    
+    private String color;
     
    
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 
 
 	public Item() {

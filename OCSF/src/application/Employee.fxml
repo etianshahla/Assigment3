@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Box?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmployeeGUI">
+   <children>
+      <Label layoutX="145.0" layoutY="62.0" />
+      <Label layoutX="158.0" layoutY="15.0" text="Employee" />
+      <Box layoutX="154.0" layoutY="303.0" />
+      <Button layoutX="186.0" layoutY="200.0" mnemonicParsing="false" onAction="#clickOnBooking" prefHeight="39.0" prefWidth="229.0" text="Booking" />
+      <Label layoutX="27.0" layoutY="15.0" text="account type:" />
+      <Label layoutX="36.0" layoutY="62.0" text="name:" />
+      <Label fx:id="name" layoutX="119.0" layoutY="62.0" text="Label" />
+      <Label layoutX="174.0" layoutY="144.0" text="choice and select:" />
+      <Button layoutX="186.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickOnComplaints" prefHeight="39.0" prefWidth="229.0" text="Complaints" />
+      <Button layoutX="186.0" layoutY="250.0" mnemonicParsing="false" onAction="#clickOnUpdateCatlog" prefHeight="39.0" prefWidth="229.0" text="Update catalog" />
+      <Button layoutX="186.0" layoutY="347.0" mnemonicParsing="false" onAction="#clickOnSurevy" prefHeight="39.0" prefWidth="229.0" text="Survey" />
+   </children>
+</AnchorPane>

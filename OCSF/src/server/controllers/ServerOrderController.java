@@ -23,7 +23,7 @@ public class ServerOrderController {
 		ResultSet rs = null;
 		try {
              System.out.println(user.getId());
-			PreparedStatement pst = connDB.prepareStatement("SELECT Orders.id,items.price from Orders,items,users WHERE items.id = Orders.item_id AND users.id = "+user.getId()+ "");
+			PreparedStatement pst = connDB.prepareStatement("SELECT DISTINCT Orders.id,Orders.totalPrice from Orders,items,users WHERE items.id = Orders.item_id AND Orders.client_id  = "+user.getId()+"");
 	
 			rs = pst.executeQuery();
 			while (rs.next()) {

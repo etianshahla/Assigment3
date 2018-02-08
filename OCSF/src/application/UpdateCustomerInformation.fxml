@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="445.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UpdateCustomerInformationGUI">
+   <children>
+      <Label alignment="CENTER" layoutX="40.0" layoutY="14.0" prefHeight="30.0" prefWidth="302.0" text="Update Customer Information" textFill="#b55f5f">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="79.0" prefHeight="25.0" prefWidth="177.0" text="Customer Name:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="124.0" prefHeight="25.0" prefWidth="71.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="200.0" prefHeight="25.0" prefWidth="177.0" text="Credit Card Number:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="creditCard" layoutX="191.0" layoutY="199.0" />
+      <Label fx:id="clientId" alignment="CENTER" layoutX="138.0" layoutY="124.0" prefHeight="25.0" prefWidth="149.0" text="Label" />
+      <Label layoutX="11.0" layoutY="247.0" prefHeight="25.0" prefWidth="177.0" text="Subscription Type:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="monthly" layoutX="188.0" layoutY="251.0" mnemonicParsing="false" text="Monthly" />
+      <CheckBox fx:id="yearly" layoutX="269.0" layoutY="251.0" mnemonicParsing="false" text="Yearly" />
+      <Button onAction="#clickOnSave" layoutX="270.0" layoutY="310.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="72.0" text="Save">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button onAction="#clickOnCancel" layoutX="270.0" layoutY="350.0" mnemonicParsing="false" text="Cancel">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="clientNames" layoutX="159.0" layoutY="78.0" onAction="#setData" prefWidth="150.0" />
+      <Label layoutX="22.0" layoutY="162.0" prefHeight="25.0" prefWidth="71.0" text="Name:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="clientNameText" layoutX="186.0" layoutY="161.0" />
+   </children>
+</AnchorPane>

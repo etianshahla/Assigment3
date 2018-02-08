@@ -29,7 +29,7 @@ public class CatlogGUI implements Initializable {
 	private TextField price;
 	@FXML
 	private TextField type;
-
+  private static  Order order = new Order();
 	List<Item> items = new ArrayList<>();
 
 	@Override
@@ -59,7 +59,6 @@ public class CatlogGUI implements Initializable {
 
 			if (comboBox.getValue() == items.get(i).getName()) {
 				System.out.println(items.get(i).getType());
-
 				price.setText(String.valueOf(items.get(i).getPrice()));
 				type.setText(items.get(i).getType());
 				price.setEditable(false);
@@ -68,30 +67,31 @@ public class CatlogGUI implements Initializable {
 		}
 	}
 	@FXML
-	public void selectItem() throws IOException
-	{  Order order = null;
+	public void selectItem() throws Exception
+	{  
 	User user = null;
 	Message message = new Message();
 	user =ClientUI.getMyInstance().getMyClient().getUser();
+	System.out.println(user.getUsername());
 		for (int i = 0; i < items.size(); i++) {
 			if (comboBox.getValue().equals(items.get(i).getName())) {
 				  order = new Order();
 				 order.setClientId(user.getId());
 				 order.setClientName(user.getUsername());
-				 order.setItemId(items.get(i).getId());
-				 message.setWhatToDo(MyConstants.ADD_ITEM_TO_ORDER_FROM_CATLOG);
-				 message.setData(order);
+				 order.setItemId(items.get(i).getId());		
+				 order.setItemPrice(items.get(i).getPrice());
 				 break;
 			}
+		}
+			MoreDetialsGUI moreDetialsGUI = new MoreDetialsGUI();
+			moreDetialsGUI.setOrder(order);
+			moreDetialsGUI.start();
 			
-		}
-
-		try
-		{				ClientUI.getMyInstance().getMyClient().handleMessageFromClientUI(message);
-		}
-		catch(IOException e)
-		{	
-			e.printStackTrace();
-		}
+			
+		
+	}
+	public Order getOrder()
+	{
+		return order;
 	}
 }

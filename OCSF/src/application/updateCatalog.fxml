@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UpdateCatlogGUI">
+   <children>
+      <Label alignment="CENTER" layoutX="49.0" layoutY="14.0" prefHeight="30.0" prefWidth="260.0" text="Catalog" textFill="#b55f5f" AnchorPane.bottomAnchor="356.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="67.0" prefHeight="25.0" prefWidth="122.0" text="Item">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="itemsList" layoutX="140.0" layoutY="66.0" onAction="#selectItem" prefWidth="150.0" />
+      <Label layoutX="14.0" layoutY="117.0" prefHeight="25.0" prefWidth="122.0" text="Item Name:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="188.0" prefHeight="25.0" prefWidth="122.0" text="Price:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="262.0" prefHeight="25.0" prefWidth="122.0" text="Type:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="143.0" layoutY="350.0" mnemonicParsing="false" onAction="#clickSaveButton" prefHeight="37.0" prefWidth="72.0" text="save">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="closeButton" layoutX="270.0" layoutY="350.0" mnemonicParsing="false" onAction="#clickOnCancelButton" text="Cancel">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="itemName" layoutX="136.0" layoutY="110.0" prefHeight="39.0" prefWidth="161.0" />
+      <TextField fx:id="price" layoutX="136.0" layoutY="181.0" prefHeight="39.0" prefWidth="161.0" />
+      <TextField fx:id="type" layoutX="136.0" layoutY="255.0" prefHeight="39.0" prefWidth="161.0" />
+      <Button layoutX="39.0" layoutY="350.0" mnemonicParsing="false" onAction="#clickAddButton" prefHeight="37.0" prefWidth="72.0" text="Add">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

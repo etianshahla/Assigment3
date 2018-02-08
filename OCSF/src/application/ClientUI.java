@@ -9,8 +9,9 @@ import myClient.MyClient;
 public class ClientUI {
 	private static ClientUI clientUI = null;
 	Message message = new Message();
-
+private static CatlogGUI catlogGUI ;
 	private static MyClient myClient;
+	private static ItemsGUI itemsGUI;
 	private ActionEvent event;
 
 	public Message getMessage() {
@@ -57,6 +58,21 @@ public class ClientUI {
 	}
 public static CatlogGUI getCatlogGUI()
 {
-	return new CatlogGUI();
+	if (catlogGUI == null) {
+		catlogGUI = new CatlogGUI();
+	}
+	return catlogGUI;
+}
+public static ItemsGUI getItemsGUI()
+{
+	if (itemsGUI == null) {
+		itemsGUI = new ItemsGUI();
+	}
+	return itemsGUI;
+}
+
+public static UpdateCustomerInformationGUI getpdateClients()
+{
+return new UpdateCustomerInformationGUI();
 }
 }

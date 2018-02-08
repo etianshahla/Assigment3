@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="35.0" layoutY="14.0" prefHeight="30.0" prefWidth="288.0" text="Administrator Permissions" textFill="#b55f5f">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <CheckBox alignment="CENTER" layoutX="14.0" layoutY="76.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Order">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutX="14.0" layoutY="116.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Reports">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </CheckBox>
+      <Button alignment="CENTER" layoutX="270.0" layoutY="310.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="72.0" text="Save">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="270.0" layoutY="350.0" mnemonicParsing="false" text="Cancel">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

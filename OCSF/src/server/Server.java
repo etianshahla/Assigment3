@@ -14,6 +14,7 @@ import ocsf.server.ConnectionToClient;
 import server.controllers.ServerLoginController;
 import server.controllers.ServerOrderController;
 import server.controllers.serverCatlogController;
+import server.controllers.serverClientsController;
 
 public class Server extends AbstractServer {
 	/**
@@ -83,7 +84,56 @@ static 	User user = new User();
 				serverCatlogController.addItemToOrder(connDB,client,message,array);
 				break;
 			}
+			case MyConstants.GET_ALL_CLIENT_DATA:
+			{   
+				serverClientsController.getAllClients(connDB,client);
+				break;
 			}
+			case MyConstants.UPDATE_CLIENT:
+			{   
+				serverClientsController.updateClient(connDB,client,message,array);
+				break;
+			}
+			case MyConstants.GET_PRODUCTS_SELF_SELECTION:
+			{
+				serverCatlogController.getAllProducts(connDB,client);
+				break;
+			}
+			case MyConstants.CHECK_CLIENT_EXIST:
+			{
+				serverClientsController.checkIfClinetExist(connDB,client,array);
+				break;
+			}
+			case MyConstants.ADD_ITEM_TO_CATLOG:
+			{		serverCatlogController.addItemToCatlog(connDB,client,array);
+			break;
+			}
+				case MyConstants.UPDATE_ITEM_TO_CATLOG:
+				{
+					serverCatlogController.updateItemToCatlog(connDB,client,array);
+					break;
+				}
+				case MyConstants.ADD_CLIENT_SURVEY:
+				{
+					serverClientsController.addClientSurvey(connDB,client,array);
+					break;
+				}
+				case MyConstants.ADD_CLIENT:
+				{
+					serverClientsController.addClient(connDB,client,array);
+					break;
+				}
+				case MyConstants.GET_SURVEY_RESULTS:
+				{
+				serverClientsController.getSurveyResults(connDB,client);
+				break;
+				}
+				case MyConstants.SAVE_SURVEY_RESULT:
+				{
+				serverClientsController.saveSurveyResults(connDB,client,array);
+				break;
+				}
+				}		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

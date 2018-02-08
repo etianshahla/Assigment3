@@ -1,7 +1,13 @@
 package common.Entities;
 
-public class ClientSurvey {
+import java.io.Serializable;
 
+public class ClientSurvey implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String clientName;
 	private int client_id;
@@ -23,6 +29,10 @@ public class ClientSurvey {
 		this.scoreQuestion4 = scoreQuestion4;
 		this.scoreQuestion5 = scoreQuestion5;
 		this.scoreQuestion6 = scoreQuestion6;
+	}
+	public ClientSurvey()
+	{
+		
 	}
 	public int getId() {
 		return id;

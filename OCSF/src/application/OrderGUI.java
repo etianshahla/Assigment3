@@ -36,9 +36,7 @@ public class OrderGUI extends Application implements Initializable {
 	@FXML	private TableView<OrdersView> tableView;
 	   @FXML private TableColumn<OrdersView, String> id;
 	    @FXML private TableColumn<OrdersView, String> price;
-
-	
-	List<OrdersView> orders = new ArrayList<>();
+private static	List<OrdersView> orders = new ArrayList<>();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -88,5 +86,11 @@ public class OrderGUI extends Application implements Initializable {
 	{
 			AddOrderGUI addOrderGUI = new AddOrderGUI();
 			addOrderGUI.start();
+	}
+	
+	@FXML
+	public void clickOnPayment() throws Exception{
+		PaymentGUI paymentGUI = new PaymentGUI();
+		paymentGUI.start();
 	}
 }

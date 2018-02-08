@@ -65,7 +65,7 @@ public class MyConstants
 	public static final String TRACK_ORDER = "Track Order Of Domestic Fuel.";
 	public static final String FOUND_ORDERS = "There are orders found in DB";
 	public static final String NO_ORDERS = "You don't have any order";
-	public static final String GET_ALL_CLIENT_DATA = "Get client's data including cars from DB";
+	public static final String GET_ALL_CLIENT_DATA = "Get client's data  from DB";
 	public static final String DATA_CLIENT = "Client's data including cars were imported from DB";
 	public static final String GET_PRICE = "Get price of product from DB";
 	public static final String FOUND_PRICE = "Price of product was returned from DB";
@@ -102,4 +102,19 @@ public class MyConstants
 			"More Details: The Cost="+"\n"+"Amount of Liters x Liter`s Price"+"\n"+"+ Discount of 4% Of Total Cost.";
 	public static final String GET_PRODUCTS_IN_CATLOG = "get product in catlog";
 	public static final String ADD_ITEM_TO_ORDER_FROM_CATLOG = "Add order from catlog";
+	public static final String UPDATE_CLIENT = "update client ";
+	public static final String GET_PRODUCTS_SELF_SELECTION = "GET products self selction";
+	public static final String CHECK_CLIENT_EXIST = "check client exist";
+	public static final String CLIENT_EXIST = "Client exist";
+	public static final String ADD_ITEM_TO_CATLOG = "Add item to catlog";
+	public static final String ADD_ITEM_TO_CATLOG_SUCCESS = "Add item to catlog success";
+	public static final String UPDATE_ITEM_TO_CATLOG = "update item in catlog";
+	public static final String UPDATE_ITEM_IN_CATLOG_SUCCESS = "update item in catlog success";
+	public static final String ADD_CLIENT_SURVEY = "add client survey";
+	public static final String ADD_CLIENT_SURVEY_SUCCESS = "ADD_CLIENT_SURVEY_SUCCESS";
+	public static final String ADD_CLIENT = "Add client";
+	public static final String ADD_CLIENT_SUCCESS = "add client success";
+	public static final String GET_SURVEY_RESULTS = "Get survey result from server";
+	public static final String SAVE_SURVEY_RESULT = "save survey result";
+	public static final String SAVE_SURVEY_RESULT_SUCCESS = "save survey result success";
 }

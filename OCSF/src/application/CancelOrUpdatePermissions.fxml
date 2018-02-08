@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="36.0" layoutY="14.0" prefHeight="30.0" prefWidth="288.0" text="Cancel/ Update Permissions" textFill="#b55f5f">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="79.0" layoutY="63.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Customer">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="79.0" layoutY="117.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Employee">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="79.0" layoutY="172.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Shop Manager">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="80.0" layoutY="224.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Expert Service">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="79.0" layoutY="276.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Administrator">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

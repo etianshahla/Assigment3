@@ -36,17 +36,16 @@ public class AddOrderGUI implements Initializable {
 		Message message = new Message();
 		message.setWhatToDo(MyConstants.GET_PRODUCTS_IN_CATLOG);
 		ClientUI.getMyClient().sendToServer(message);
-		
-		CatlogGUI catlogGUI = new CatlogGUI();
-		catlogGUI.start();
+	
 
 	}
 	
 	@FXML
 	public void openItems() throws IOException
-	{
-		ItemsGUI itemsGUI = new ItemsGUI();
-		itemsGUI.start();
+	{   	Message message = new Message();
+	message.setWhatToDo(MyConstants.GET_PRODUCTS_SELF_SELECTION);
+	ClientUI.getMyClient().sendToServer(message);
+		
 	}
 	
 }

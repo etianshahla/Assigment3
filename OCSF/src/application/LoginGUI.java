@@ -48,7 +48,10 @@ public static ClientUI clientUI;
 	}
 
 	LoginController loginController = new LoginController();
-
+    /**
+     * 
+     * @throws Exception
+     */
 	public void start() throws Exception {
 		URL url = getClass().getResource("Login.fxml");
 		AnchorPane pane = FXMLLoader.load(url);
@@ -57,7 +60,11 @@ public static ClientUI clientUI;
 		stage.setTitle("Login");
 		stage.show();
 	}
-
+      /**
+       * click on login button 
+       * @param event
+       * @throws Exception
+       */
 	private void handleButtonAction(ActionEvent event) throws Exception {
 		// Button was clicked, do something...
 		String requestedID = username.getText();

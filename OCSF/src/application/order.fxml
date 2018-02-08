@@ -15,7 +15,7 @@
         </columns>
       </TableView>
       <Button onAction="#addButtonClick" layoutX="125.0" layoutY="337.0" mnemonicParsing="false" text="add" />
-      <Button layoutX="264.0" layoutY="345.0" mnemonicParsing="false" text="payment" />
+      <Button onAction="#clickOnPayment" layoutX="264.0" layoutY="345.0" mnemonicParsing="false" text="payment" />
       <Button layoutX="452.0" layoutY="345.0" mnemonicParsing="false" text="remove" />
    </children>
 </AnchorPane>
